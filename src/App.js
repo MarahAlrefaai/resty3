@@ -21,7 +21,6 @@ class App extends React.Component {
         <Routes>
          
         <Route path="/" element={<Home />} />
-
           <Route path="/history" element={<History />} />
         <Route path="/help" element={<Help />} />
         </Routes>

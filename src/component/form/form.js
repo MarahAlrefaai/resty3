@@ -3,15 +3,18 @@ import "./form.scss";
 
 function Form(props) {
   //-----------------------------------------
- const [url , setUrl]=useState();
+ const [url , setUrl]=useState(); 
  const [method , setMethod]=useState("Get");
  const [body, setBody] = useState(null);
 
  const handleURL = (event) => {
+   //to save the url in each time i change it 
     event.preventDefault();
     setUrl(event.target.value);
+
   } 
   const handleSubmit = event => {
+    //to save the data come from the form  in each time i change it 
     event.preventDefault();
     const formData = {
       method: method,
@@ -20,7 +23,7 @@ function Form(props) {
     };
     if (body) 
     {formData.body = body;}
-    props.handleApiCall(formData);
+    props.handleApiCall(formData);//send the data to this function to use it in axios 
   }
  const handleMethod = (event) => {
     event.preventDefault();
@@ -35,10 +38,10 @@ function Form(props) {
   //-----------------------------------------
     return ( 
         <form className="form" onSubmit={handleSubmit}>
-            <div className="request">
+            <div >
                 <input onChange={handleURL} className="input" type="text" name="url" placeholder="http://api.url.here"  />
                
-                <button className= "send" type="submit"  onClick={!props.isloading ? props.handleClick : null}  > {method}  </button>
+                <button type="submit"  onClick={!props.isloading ? props.handleClick : null}  > {method}  </button>
             </div>
             <div className="methods">
                 <button onClick={handleMethod} className="method" id="GET" name ="GET" >GET</button>
@@ -46,7 +49,6 @@ function Form(props) {
                 <button onClick={handleMethod} className="method" id="PUT" name = "PUT" >PUT</button>
                 <button onClick={handleMethod} className="method" id="DELETE" name = "DELETE" >DELETE</button>
 
-               
             </div>
             <textarea name="body" onChange={handleBody} id="textdata"defaultValue="{}"/>
         </form>)
