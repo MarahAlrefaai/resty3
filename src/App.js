@@ -2,7 +2,7 @@ import './App.scss';
 import React from 'react'
 
 import Header from './component/header/header';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';//to move between pages using routes
 /////////////////////////////////////////////
 //pages
 import History from '../src/component/history/history.js';
@@ -21,7 +21,6 @@ class App extends React.Component {
         <Routes>
          
         <Route path="/" element={<Home />} />
-
           <Route path="/history" element={<History />} />
         <Route path="/help" element={<Help />} />
         </Routes>
