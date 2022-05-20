@@ -2,7 +2,7 @@ import './App.scss';
 import React from 'react'
 
 import Header from './component/header/header';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';//to move between pages using routes
 /////////////////////////////////////////////
 //pages
 import History from '../src/component/history/history.js';
